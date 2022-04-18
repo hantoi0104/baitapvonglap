@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Nhập N giai thừa:
+<input type="text"; id="nhap">
+<input type="submit" value="tính" onclick="tinhgiaithua()">
+<p>Kết quả</p>
+<p id="ketqua"></p>
+<script>
+    function tinhgiaithua(){
+        let n = parseInt(document.querySelector("#nhap").value)
+        let tich=1
+        for(let i=1; i<=n; i++){
+            tich= tich*i
+        }
+        document.querySelector("#ketqua").innerHTML=tich
+    }
+</script>
+</body>
+</html>

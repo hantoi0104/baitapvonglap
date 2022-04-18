@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Nhập vào số lượng số chia hết cho 3 muốn hiển thị<br><br>
+<input id="ip1" type="text"><br>
+<input type="submit" value=" Tìm" onclick="indayso()">
+<p > Hiển thị:</p>
+<p id="hienthi"></p>
+<script>
+    function checkchiahet(number){
+        if (number % 3 ==0)
+            return 1;
+        else
+        return 0 ;
+           }
+    function indayso(){
+        let dem=0, i=17, str=" ";
+        let soluong= parseInt(document.querySelector("#ip1").value)
+        while ( dem<soluong){
+            if( checkchiahet(i) == 1){
+                dem +=1;
+                str += i +", ";
+            }
+            i++;
+        }
+        document.querySelector("#hienthi").innerHTML=str;
+    }
+</script>
+</body>
+</html>

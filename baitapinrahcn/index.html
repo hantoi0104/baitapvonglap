@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+nhập chiều dài hình chữ nhật:<br>
+<input type="text" id="chieudai"> <br>
+Nhập chiều rộng hình chữ nhật:<br>
+<input type="text" id="chieurong"><br>
+<input type="submit" value="in" onclick="inhinhchunhat()">
+<p id="ketqua"></p>
+<script>
+    function inhinhchunhat() {
+        let chieudai = parseInt(document.querySelector("#chieudai").value)
+        let chieurong = parseInt(document.querySelector("#chieurong").value)
+        let str = ""
+        for (let i = 1; i <= chieurong; i++) {
+            for (let j = 1; j <= chieudai; j++) {
+                if( i==1 ||i==chieurong || j==1 || j==chieudai ){
+                    str +="*"
+                }
+                else {
+                    str +="&nbsp" + "&nbsp"
+                }
+
+            }
+            str += "<br>"
+        }
+        document.querySelector("#ketqua").innerHTML=str
+    }
+
+</script>
+</body>
+</html>

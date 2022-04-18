@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Nhập N, hiển thị số đầu tiên của dãy Fibonacci chia hết cho N<br>
+<input type="text" id="nhap"><br>
+<input type="submit" value="Tim" onclick="timso()">
+<p id="ketqua">Kết quả</p>
+<script>
+function timso() {
+    let a1 = 1, a2 = 1, a;
+    let check = 0;
+    let n= parseInt(document.querySelector("#nhap").value)
+    while (check == 0) {
+        a = a1 + a2
+        if (a % n == 0) {
+            check = 1
+            break
+        } else {
+            a1 = a2;
+            a2 = a;
+        }
+    }
+    document.querySelector("#ketqua").innerHTML="Kết quả: "+ a
+}
+
+</script>
+</body>
+</html>

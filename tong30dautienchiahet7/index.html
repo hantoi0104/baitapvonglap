@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Tổng của N số tự nhiên đầu tiên chia hết cho 7<br>
+<input type="text" id="nhap"><br>
+<input type="submit" value="tính" onclick="tinhtong()" >
+<p id="ketqua"> Tổng: </p>
+<script>
+    function tinhtong(){
+        let tong = 0
+        let n= parseInt(document.querySelector("#nhap").value)
+        for( let i=1; i<=n; i++){
+            tong = tong + 7*i
+        }
+        document.querySelector("#ketqua").innerHTML= " Tổng: "+tong
+    }
+</script>
+</body>
+</html>

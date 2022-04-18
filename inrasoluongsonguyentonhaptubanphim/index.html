@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Nhập vào số lượng nguyên tố muốn hiển thị<br><br>
+<input id="ip1" type="text"><br>
+<input type="submit" value=" Tìm" onclick="insonguyento()">
+<p id > Hiển thị:</p>
+<p id="inra"></p>
+</body>
+<script>
+    // kiểm tra số nguyên tố
+    function check(number) {
+        if (number < 2)
+            return 0;
+        else {
+            for (let i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i == 0) {
+                    return 0;
+                }
+            }
+            return 1;
+        }
+    }
+    //In ra số lượng số nguyên tố
+    function insonguyento(){
+        let soluong = document.querySelector("#ip1").value;
+        let dem = 0;
+        let i = 1;
+        let string =" ";
+        while (dem<soluong){
+            if( check(i)==1){
+                string = string + i + ", ";
+                dem ++;
+            }
+            i++;
+        }
+        document.querySelector("#inra").innerHTML= string
+    }
+</script>
+</html>

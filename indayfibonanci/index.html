@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body> Tính tổng N số trong dãy Fibonaci:
+<input type="text" id="nhap">
+<input type="submit" value="tinh" onclick="tinhtong()">
+<p>Hiển Thị</p>
+<p id="hienthiday"></p>
+<p id="hienthitong"></p>
+<script>
+    function timsofibonaci(n) {
+        let a1 = 1, a2 = 1;
+        if (n == 1 || n == 2) {
+            return 1;
+        }
+        let i = 3, a;
+        while (i <= n) {
+            a = a1 + a2;
+            a1 = a2;
+            a2 = a;
+            i++;
+        }
+        return a;
+    }
+
+    function tinhtong() {
+        let tong=0
+        let str = " ";
+        let n= parseInt(document.querySelector("#nhap").value)
+        for (let i = 1; i <= n; i++) {
+            tong = tong+timsofibonaci(i)
+            str += timsofibonaci(i) + ", "
+        }
+        document.querySelector("#hienthiday").innerHTML = str
+        document.querySelector("#hienthitong").innerHTML = "Tổng là: "+ tong
+    }
+</script>
+</body>
+</html>
